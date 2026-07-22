@@ -6,6 +6,7 @@ import 'package:get_app/profile.dart';
 import 'package:get_app/list_and_gridview.dart';
 import 'package:get_app/greenpoint/green_point_page.dart';
 import 'package:get_app/greenpoint/partner_store_page.dart';
+import 'package:get_app/auth/welcome_page.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
@@ -124,6 +125,56 @@ class _AppDrawerState extends State<AppDrawer> {
               Get.to(() => const PartnerStorePage());
             },
           ),
+          const Divider(height: 16, thickness: 1, indent: 16, endIndent: 16),
+          Padding(
+            padding: const EdgeInsets.only(left: 16, top: 8, bottom: 8),
+            child: Text(
+              'ระบบบัญชี',
+              style: GoogleFonts.prompt(
+                textStyle: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade400,
+                  letterSpacing: 0.8,
+                ),
+              ),
+            ),
+          ),
+          _buildDrawerItem(
+            icon: Icons.logout_rounded,
+            title: 'ออกจากระบบ (Logout)',
+            color: const Color(0xFFEF4444),
+            onTap: () {
+              Get.back();
+              Get.defaultDialog(
+                title: "ออกจากระบบ",
+                titleStyle: GoogleFonts.prompt(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Color(0xFF2C3E50),
+                  ),
+                ),
+                content: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  child: Text(
+                    "คุณต้องการออกจากระบบใช่หรือไม่?",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.prompt(textStyle: const TextStyle(fontSize: 14)),
+                  ),
+                ),
+                textConfirm: "ออกจากระบบ",
+                textCancel: "ยกเลิก",
+                confirmTextColor: Colors.white,
+                cancelTextColor: const Color(0xFF64748B),
+                buttonColor: const Color(0xFFEF4444),
+                onConfirm: () {
+                  Get.offAll(() => const WelcomePage());
+                },
+              );
+            },
+          ),
+          const SizedBox(height: 16),
         ],
       ),
     );
