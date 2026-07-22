@@ -26,24 +26,27 @@ class _AppDrawerState extends State<AppDrawer> {
           UserAccountsDrawerHeader(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF6C63FF), Color(0xFF8A84FF)],
+                colors: [Color(0xFF0F172A), Color(0xFF1E293B)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
             ),
             currentAccountPicture: CircleAvatar(
               radius: 30,
-              backgroundColor: Colors.white,
-              child: ClipOval(
-                child: Image.asset(
-                  'assets/images/me.jpg',
-                  fit: BoxFit.cover,
-                  width: 68,
-                  height: 68,
-                  errorBuilder: (context, error, stackTrace) => const Icon(
-                    Icons.person,
-                    color: Color(0xFF6C63FF),
-                    size: 32,
+              backgroundColor: const Color(0xFF0D9488),
+              child: Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: ClipOval(
+                  child: Image.asset(
+                    'assets/images/me.jpg',
+                    fit: BoxFit.cover,
+                    width: 64,
+                    height: 64,
+                    errorBuilder: (context, error, stackTrace) => const Icon(
+                      Icons.person,
+                      color: Colors.white,
+                      size: 32,
+                    ),
                   ),
                 ),
               ),
@@ -59,7 +62,7 @@ class _AppDrawerState extends State<AppDrawer> {
               ),
             ),
             accountEmail: Text(
-              'นักศึกษา CSI ปี 3',
+              'นักศึกษา CSI ปี 3 • รหัส 6712732103',
               style: GoogleFonts.prompt(
                 textStyle: TextStyle(
                   fontSize: 12,
@@ -71,13 +74,13 @@ class _AppDrawerState extends State<AppDrawer> {
           _buildDrawerItem(
             icon: Icons.home_rounded,
             title: 'หน้าแรก (Home)',
-            color: const Color(0xFF6C63FF),
+            color: const Color(0xFF0F172A),
             onTap: () => Get.offAll(() => const MyHomePage()),
           ),
           _buildDrawerItem(
             icon: Icons.person_rounded,
             title: 'ข้อมูลส่วนตัว (Profile)',
-            color: const Color(0xFF6C63FF),
+            color: const Color(0xFF0F172A),
             onTap: () {
               Get.back();
               Get.to(() => const ProfilePage());
@@ -86,22 +89,22 @@ class _AppDrawerState extends State<AppDrawer> {
           _buildDrawerItem(
             icon: Icons.grid_view_rounded,
             title: 'รายการข้อมูล (List & Grid)',
-            color: const Color(0xFF00B4D8),
+            color: const Color(0xFF0D9488),
             onTap: () {
               Get.back();
               Get.to(() => const ListAndGridViewPage());
             },
           ),
-          const Divider(height: 16, thickness: 1, indent: 16, endIndent: 16),
+          const Divider(height: 16, thickness: 1, indent: 16, endIndent: 16, color: Color(0xFFE2E8F0)),
           Padding(
             padding: const EdgeInsets.only(left: 16, top: 8, bottom: 8),
             child: Text(
               'งานเสริมที่ส่งคู่กัน (GreenPoint)',
               style: GoogleFonts.prompt(
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey.shade400,
+                  color: Color(0xFF94A3B8),
                   letterSpacing: 0.8,
                 ),
               ),
@@ -110,7 +113,7 @@ class _AppDrawerState extends State<AppDrawer> {
           _buildDrawerItem(
             icon: Icons.eco_rounded,
             title: 'สะสมคะแนน (GreenPoint)',
-            color: const Color(0xFF2E7D32),
+            color: const Color(0xFF16A34A),
             onTap: () {
               Get.back();
               Get.to(() => const GreenPointPage());
@@ -119,22 +122,22 @@ class _AppDrawerState extends State<AppDrawer> {
           _buildDrawerItem(
             icon: Icons.storefront_rounded,
             title: 'ร้านค้าพันธมิตร (Store)',
-            color: const Color(0xFFF39C12),
+            color: const Color(0xFFD97706),
             onTap: () {
               Get.back();
               Get.to(() => const PartnerStorePage());
             },
           ),
-          const Divider(height: 16, thickness: 1, indent: 16, endIndent: 16),
+          const Divider(height: 16, thickness: 1, indent: 16, endIndent: 16, color: Color(0xFFE2E8F0)),
           Padding(
             padding: const EdgeInsets.only(left: 16, top: 8, bottom: 8),
             child: Text(
               'ระบบบัญชี',
               style: GoogleFonts.prompt(
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey.shade400,
+                  color: Color(0xFF94A3B8),
                   letterSpacing: 0.8,
                 ),
               ),
@@ -152,7 +155,7 @@ class _AppDrawerState extends State<AppDrawer> {
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
-                    color: Color(0xFF2C3E50),
+                    color: Color(0xFF0F172A),
                   ),
                 ),
                 content: Padding(
@@ -160,7 +163,7 @@ class _AppDrawerState extends State<AppDrawer> {
                   child: Text(
                     "คุณต้องการออกจากระบบใช่หรือไม่?",
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.prompt(textStyle: const TextStyle(fontSize: 14)),
+                    style: GoogleFonts.prompt(textStyle: const TextStyle(fontSize: 14, color: Color(0xFF475569))),
                   ),
                 ),
                 textConfirm: "ออกจากระบบ",
@@ -187,14 +190,14 @@ class _AppDrawerState extends State<AppDrawer> {
     required VoidCallback onTap,
   }) {
     return ListTile(
-      leading: Icon(icon, color: color, size: 24),
+      leading: Icon(icon, color: color, size: 22),
       title: Text(
         title,
         style: GoogleFonts.prompt(
           textStyle: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w500,
-            color: Color(0xFF2C3E50),
+            color: Color(0xFF0F172A),
           ),
         ),
       ),
@@ -204,3 +207,4 @@ class _AppDrawerState extends State<AppDrawer> {
     );
   }
 }
+

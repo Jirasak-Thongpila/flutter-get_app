@@ -60,19 +60,19 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FD),
+      backgroundColor: const Color(0xFFF8FAFC),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         scrolledUnderElevation: 0,
-        iconTheme: const IconThemeData(color: Color(0xFF2C3E50)),
+        iconTheme: const IconThemeData(color: Color(0xFF0F172A)),
         title: Text(
           "Get App",
           style: GoogleFonts.prompt(
             textStyle: const TextStyle(
-              color: Color(0xFF2C3E50),
+              color: Color(0xFF0F172A),
               fontWeight: FontWeight.bold,
-              fontSize: 22,
+              fontSize: 20,
             ),
           ),
         ),
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.only(right: 16, left: 8),
               child: CircleAvatar(
                 radius: 18,
-                backgroundColor: const Color(0xFF6C63FF),
+                backgroundColor: const Color(0xFF0F172A),
                 backgroundImage: const AssetImage('assets/images/me.jpg'),
                 child: ClipOval(
                   child: Image.asset(
@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1),
-          child: Container(color: Colors.grey.shade100, height: 1),
+          child: Container(color: const Color(0xFFE2E8F0), height: 1),
         ),
       ),
       drawer: const AppDrawer(),
@@ -126,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   textStyle: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF2C3E50),
+                    color: Color(0xFF0F172A),
                   ),
                 ),
               ),
@@ -148,28 +148,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     icon: Icons.person_rounded,
                     title: "โปรไฟล์ของฉัน",
                     subtitle: "ดูข้อมูลและทักษะผู้พัฒนา",
-                    color: const Color(0xFF6C63FF),
+                    color: const Color(0xFF0F172A),
                     onTap: () => Get.to(() => const ProfilePage()),
                   ),
                   _buildMenuCard(
                     icon: Icons.grid_view_rounded,
                     title: "รายการข้อมูล",
                     subtitle: "List & Grid View",
-                    color: const Color(0xFF00B4D8),
+                    color: const Color(0xFF0D9488),
                     onTap: () => Get.to(() => const ListAndGridViewPage()),
                   ),
                   _buildMenuCard(
                     icon: Icons.eco_rounded,
                     title: "GreenPoint",
                     subtitle: "ระบบสะสมแต้มรักษ์โลก",
-                    color: const Color(0xFF2E7D32),
+                    color: const Color(0xFF16A34A),
                     onTap: () => Get.to(() => const GreenPointPage()),
                   ),
                   _buildMenuCard(
                     icon: Icons.storefront_rounded,
                     title: "ร้านค้าพันธมิตร",
                     subtitle: "ดูร้านค้าพาร์ทเนอร์",
-                    color: const Color(0xFFF39C12),
+                    color: const Color(0xFFD97706),
                     onTap: () => Get.to(() => const PartnerStorePage()),
                   ),
                 ],
@@ -195,10 +195,10 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
-        selectedItemColor: const Color(0xFF6C63FF),
-        unselectedItemColor: Colors.grey.shade400,
+        selectedItemColor: const Color(0xFF0F172A),
+        unselectedItemColor: const Color(0xFF94A3B8),
         selectedLabelStyle: GoogleFonts.prompt(
-          textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+          textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10, color: Color(0xFF0F172A)),
         ),
         unselectedLabelStyle: GoogleFonts.prompt(
           textStyle: const TextStyle(fontSize: 10),
@@ -206,12 +206,12 @@ class _MyHomePageState extends State<MyHomePage> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
-            activeIcon: Icon(Icons.home),
+            activeIcon: Icon(Icons.home_rounded),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.storefront_outlined),
-            activeIcon: Icon(Icons.storefront),
+            activeIcon: Icon(Icons.storefront_rounded),
             label: 'Partner Store',
           ),
           BottomNavigationBarItem(
@@ -221,12 +221,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
-            activeIcon: Icon(Icons.person),
+            activeIcon: Icon(Icons.person_rounded),
             label: 'Profile',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.eco_outlined),
-            activeIcon: Icon(Icons.eco),
+            activeIcon: Icon(Icons.eco_rounded),
             label: 'Profile GP',
           ),
         ],
